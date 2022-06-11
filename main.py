@@ -31,10 +31,7 @@ def solve(grid_variant):
 
     print("\nProgram berjalan selama: %.4f seconds" %(time.time() - start_time))
 
-def main():
-    # # Array 2D atau Grid yang akan dipakai
-    # grid =[[0 for x in range(9)]for y in range(9)]
-    
+def main():    
     # Macam-macam jumlah clue dalam Grid
     grid32 = [[3, 0, 6, 5, 0, 8, 4, 0, 0],
             [5, 2, 0, 0, 0, 0, 0, 0, 0],
