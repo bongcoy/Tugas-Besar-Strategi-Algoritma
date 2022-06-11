@@ -18,11 +18,22 @@ def print_grid(grid):
                 print("|")
     print("-------------------------")
 
-def main():
+def solve(grid_variant):
+    # Jika sukses, maka print Grid
+    print("Hasilnya adalah :")
+
     start_time = time.time()
-        
-    # Array 2D atau Grid yang akan dipakai
-    grid =[[0 for x in range(9)]for y in range(9)]
+    
+    if(solve_sudoku(grid_variant)):
+        print_grid(grid_variant)
+    else:
+        print("No solution exists")
+
+    print("\nProgram berjalan selama: %.4f seconds" %(time.time() - start_time))
+
+def main():
+    # # Array 2D atau Grid yang akan dipakai
+    # grid =[[0 for x in range(9)]for y in range(9)]
     
     # Macam-macam jumlah clue dalam Grid
     grid32 = [[3, 0, 6, 5, 0, 8, 4, 0, 0],
@@ -62,14 +73,7 @@ def main():
     print_grid(grid)
     print()
 
-    # Jika sukses, maka print Grid
-    print("Hasilnya adalah :")
-    if(solve_sudoku(grid)):
-        print_grid(grid)
-    else:
-        print("No solution exists")
-
-    print("\nProgram berjalan selama: %.4f seconds" %(time.time() - start_time))
+    solve(grid)
 
 if __name__=="__main__":
     main()
