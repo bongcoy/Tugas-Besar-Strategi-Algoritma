@@ -18,7 +18,7 @@ def print_grid(grid):
                 print("|")
     print("-------------------------")
 
-if __name__=="__main__":
+def main():
     start_time = time.time()
         
     # Array 2D atau Grid yang akan dipakai
@@ -47,3 +47,6 @@ if __name__=="__main__":
         print("No solution exists")
 
     print("\nProgram berjalan selama: %.4f seconds" %(time.time() - start_time))
+
+if __name__=="__main__":
+    main()
