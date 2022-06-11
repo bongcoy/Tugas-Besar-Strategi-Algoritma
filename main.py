@@ -2,6 +2,27 @@ from sudo_backtrack import *
 
 import time
 
+# Print array 2D untuk membentuk sebuah Grid
+def print_grid(grid):
+    # for row in range(9):
+    #     for col in range(9):
+    #         print(grid[row][col], end=" ")
+    #     print("n")
+
+    for row in range(len(grid)):
+        if row == 0 or row == 3 or row == 6:
+            print("-------------------------")
+        for col in range(len(grid[row])):
+            if col == 0 or col == 3 or col ==6:
+                print("| ", end = "")
+            if grid[row][col] != 0:
+                print(grid[row][col], end = " ")
+            else:
+                print(end = "  ")
+            if col == 8:
+                print("|")
+    print("-------------------------")
+
 if __name__=="__main__":
     start_time = time.time()
         
