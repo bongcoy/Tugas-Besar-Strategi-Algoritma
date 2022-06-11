@@ -1,3 +1,5 @@
+import time
+
 # Print array 2D untuk membentuk sebuah Grid
 def print_grid(grid):
     # for row in range(9):
@@ -94,7 +96,8 @@ def solve_sudoku(arr):
     return False 
 
 if __name__=="__main__":
-    
+    start_time = time.time()
+        
     # Array 2D atau Grid yang akan dipakai
     grid =[[0 for x in range(9)]for y in range(9)]
     
@@ -119,3 +122,5 @@ if __name__=="__main__":
         print_grid(grid)
     else:
         print("No solution exists")
+
+    print("\nProgram berjalan selama: %.4f seconds" %(time.time() - start_time))
