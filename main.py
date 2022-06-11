@@ -4,11 +4,6 @@ import time
 
 # Print array 2D untuk membentuk sebuah Grid
 def print_grid(grid):
-    # for row in range(9):
-    #     for col in range(9):
-    #         print(grid[row][col], end=" ")
-    #     print("n")
-
     for row in range(len(grid)):
         if row == 0 or row == 3 or row == 6:
             print("-------------------------")
