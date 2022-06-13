@@ -1,3 +1,5 @@
+from general_function import *
+
 # Mencari elemen grid yang bisa direplace (saat elemen bernilai 0)
 def is_empty_exist(grid, l):
     for row in range(9):
@@ -8,35 +10,8 @@ def is_empty_exist(grid, l):
                 return True
     return False
 
-# Cek sudah terpakai di baris ke-row atau tidak
-def used_in_row(grid, row, num):
-    for i in range(9):
-        if(grid[row][i] == num):
-            return True
-    return False
-
-# Cek sudah terpakai di kolom ke-col atau tidak
-def used_in_col(grid, col, num):
-    for i in range(9):
-        if(grid[i][col] == num):
-            return True
-    return False
-
-# Cek sudah terpakai di box 3x3 atau tidak
-def used_in_box(grid, row, col, num):
-    for i in range(3):
-        for j in range(3):
-            if(grid[i + row][j + col] == num):
-                return True
-    return False
-
-# Cek safe atau tidak
-# Safe = Num tidak terpakai di row, column, dan box 3x3
-def is_safe(grid, row, col, num):
-    return not used_in_row(grid, row, num) and not used_in_col(grid, col, num) and not used_in_box(grid, row - row % 3, col - col % 3, num)
-
 # Program utama
-def solve_sudoku(grid):
+def sudoku_backtrack(grid):
 
     # List untuk menyimpan angka yang dapat diisi (saat num = 0)
     l = [0, 0]
@@ -61,10 +36,10 @@ def solve_sudoku(grid):
 
             # Rekursif untuk cek kembali pada 
             # elemen kosong selanjutnya
-            if(solve_sudoku(grid)):
+            if(sudoku_backtrack(grid)):
                 return True
 
-            # Jika tidak safe, maka sel menjadi 0 kembali
+            # Jika belum true, maka sel menjadi 0 kembali
             grid[row][col] = 0
 
     # Jika loop tidak menghasilkan true, maka backtrack
