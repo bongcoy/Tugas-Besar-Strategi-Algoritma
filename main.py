@@ -14,7 +14,9 @@ def solve_backtrack(grid_variant):
     else:
         print("No solution exists")
 
-    print("\nProgram berjalan selama: %.5f seconds" %(time.time() - start_time))
+    end_time = time.time()
+
+    print("\nProgram berjalan selama: %.5f seconds" %(end_time - start_time))
 
 def solve_bruteforce(grid_variant):
     # Jika sukses, maka print Grid
@@ -27,8 +29,9 @@ def solve_bruteforce(grid_variant):
     else:
         print("No solution  exists")
 
-    print("\nProgram berjalan selama: %.5f seconds" %(time.time() - start_time))
+    end_time = time.time()
 
+    print("\nProgram berjalan selama: %.5f seconds" %(end_time - start_time))
 
 def main():
     # Macam-macam jumlah clue dalam Grid
