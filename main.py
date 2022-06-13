@@ -5,7 +5,7 @@ import time
 
 def solve_backtrack(grid_variant):
     # Jika sukses, maka print Grid
-    print("Hasilnya adalah :")
+    print("Hasil [Backtrack] adalah :")
 
     start_time = time.time()
     
@@ -18,7 +18,7 @@ def solve_backtrack(grid_variant):
 
 def solve_bruteforce(grid_variant):
     # Jika sukses, maka print Grid
-    print("Hasilnya adalah :")
+    print("Hasil [Brute Force] adalah :")
 
     start_time = time.time()
 
@@ -90,6 +90,7 @@ def main():
     print()
 
     solve_backtrack(grid)
+
 
 if __name__=="__main__":
     main()
