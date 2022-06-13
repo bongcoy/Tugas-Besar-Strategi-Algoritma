@@ -18,7 +18,7 @@ def print_grid(grid):
                 print("|")
     print("-------------------------")
 
-def solve(grid_variant):
+def solve_backtrack(grid_variant):
     # Jika sukses, maka print Grid
     print("Hasilnya adalah :")
 
@@ -32,8 +32,6 @@ def solve(grid_variant):
     print("\nProgram berjalan selama: %.4f seconds" %(time.time() - start_time))
 
 def main():
-    # TODO: Generate random sudoku input based on size
- 
     # Macam-macam jumlah clue dalam Grid
     grid76 = [[6, 3, 0, 1, 4, 5, 7, 9, 8],
             [1, 7, 5, 2, 8, 9, 0, 6, 4],
@@ -92,7 +90,7 @@ def main():
     print_grid(grid)
     print()
 
-    solve(grid)
+    solve_backtrack(grid)
 
 if __name__=="__main__":
     main()
