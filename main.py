@@ -2,6 +2,7 @@ from sudoku_bruteforce import *
 from sudoku_backtrack import *
 
 import timeit
+import matplotlib.pyplot as plt
 
 def solve_backtrack(grid_variant):
     if(sudoku_backtrack(grid_variant)):
@@ -25,10 +26,22 @@ def try_one_sudoku(grid_default, n_run):
     grid_bt = grid_default
 
     result = timeit.timeit(lambda: solve_backtrack(grid_bt),number=n_run)
-    print("[Backtrack]   execution time is %.5f seconds" %(result))
+    y_backtrack.append(round(result,5))
+    # print("[Backtrack]   execution time is %.5f seconds" %(result))
+    
     result = timeit.timeit(lambda: solve_bruteforce(grid_bf),number=n_run)
-    print("[Brute Force] execution time is %.5f seconds\n" %(result))
+    y_bruteforce.append(round(result,5))
+    # print("[Brute Force] execution time is %.5f seconds\n" %(result))
 
+def draw_graph(x,y1,y2):
+    # plotting the points 
+    plt.plot(x, y1, color='green', linestyle='dashed', linewidth = 3,
+             marker='o', markerfacecolor='blue', markersize=8, label='Backtrack')
+    plt.plot(x, y2, color='red', linestyle='dashed', linewidth = 3,
+             marker='o', markerfacecolor='orange', markersize=8, label='Brute Force')
+
+    plt.legend()
+    plt.show()
 
 def main():
     use_grid = grid17
@@ -37,11 +50,16 @@ def main():
     print_grid(use_grid)
     print()
 
+    x = [100, 500, 1000, 2000]
+
     # Macam-macam ukuran jumlah run
-    try_one_sudoku(use_grid, 100)
-    try_one_sudoku(use_grid, 500)
-    try_one_sudoku(use_grid, 1000)
-    try_one_sudoku(use_grid, 2000)
+    for i in x:
+        try_one_sudoku(use_grid, i)
+
+    print("Backtrack   =",y_backtrack)
+    print("Brute Force =",y_bruteforce)
+
+    draw_graph(x,y_backtrack,y_bruteforce)
 
 if __name__=="__main__":
     main()
