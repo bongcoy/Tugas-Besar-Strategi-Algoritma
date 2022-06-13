@@ -1,22 +1,7 @@
-from sudo_backtrack import *
+from sudoku_bruteforce import *
+from sudoku_backtrack import *
 
 import time
-
-# Print array 2D untuk membentuk sebuah Grid
-def print_grid(grid):
-    for row in range(len(grid)):
-        if row == 0 or row == 3 or row == 6:
-            print("-------------------------")
-        for col in range(len(grid[row])):
-            if col == 0 or col == 3 or col ==6:
-                print("| ", end = "")
-            if grid[row][col] != 0:
-                print(grid[row][col], end = " ")
-            else:
-                print(end = "  ")
-            if col == 8:
-                print("|")
-    print("-------------------------")
 
 def solve_backtrack(grid_variant):
     # Jika sukses, maka print Grid
@@ -24,12 +9,26 @@ def solve_backtrack(grid_variant):
 
     start_time = time.time()
     
-    if(solve_sudoku(grid_variant)):
+    if(sudoku_backtrack(grid_variant)):
         print_grid(grid_variant)
     else:
         print("No solution exists")
 
-    print("\nProgram berjalan selama: %.4f seconds" %(time.time() - start_time))
+    print("\nProgram berjalan selama: %.5f seconds" %(time.time() - start_time))
+
+def solve_bruteforce(grid_variant):
+    # Jika sukses, maka print Grid
+    print("Hasilnya adalah :")
+
+    start_time = time.time()
+
+    if (sudoku_bruteforce(grid_variant, 0, 0)):
+        print_grid(grid_variant)
+    else:
+        print("No solution  exists")
+
+    print("\nProgram berjalan selama: %.5f seconds" %(time.time() - start_time))
+
 
 def main():
     # Macam-macam jumlah clue dalam Grid
