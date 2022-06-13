@@ -83,14 +83,15 @@ def main():
             [0, 0, 0, 0, 0, 0, 7, 0, 4]]
 
     # Set nilai awal Grid
-    grid = grid76
+    grid = grid17
 
     print("Grid awal kamu :")
     print_grid(grid)
     print()
 
+    solve_bruteforce(grid)
+    print()
     solve_backtrack(grid)
-
 
 if __name__=="__main__":
     main()
