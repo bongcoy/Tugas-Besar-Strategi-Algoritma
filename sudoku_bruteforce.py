@@ -19,7 +19,8 @@ def sudoku_bruteforce(grid, row, col):
     if grid[row][col] != 0:
         return sudoku_bruteforce(grid, row, col + 1)
 
-    for num in range(1, NMAX + 1, 1): # NMAX+1 karena exclude
+    # Cek angka 1 sampai 9 pada masing2 sel
+    for num in range(1, NMAX+1): # NMAX+1 karena exclude
        
         # Jika angka safe, maka masukkan ke dalam sel
         if is_safe(grid, row, col, num):

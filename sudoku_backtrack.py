@@ -2,8 +2,8 @@ from general_function import *
 
 # Mencari elemen grid yang bisa direplace (saat elemen bernilai 0)
 def is_empty_exist(grid, l):
-    for row in range(9):
-        for col in range(9):
+    for row in range(NMAX):
+        for col in range(NMAX):
             if(grid[row][col]== 0):
                 l[0]= row
                 l[1]= col
@@ -26,7 +26,7 @@ def sudoku_backtrack(grid):
     col = l[1]
     
     # Cek angka 1 sampai 9 pada masing2 sel
-    for num in range(1, 10):
+    for num in range(1, NMAX+1): # NMAX+1 karena exclude
         
         # Jika angka safe, maka masukkan ke dalam sel
         if(is_safe(grid, row, col, num)):
