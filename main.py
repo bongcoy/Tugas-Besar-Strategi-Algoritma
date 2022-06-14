@@ -40,6 +40,9 @@ def draw_graph(x,y1,y2):
     plt.plot(x, y2, color='red', linestyle='dashed', linewidth = 3,
              marker='o', markerfacecolor='orange', markersize=8, label='Brute Force')
 
+    plt.xlabel('x - Jumlah n kali Run')
+    plt.ylabel('y - Waktu eksekusi')
+
     plt.legend()
     plt.show()
 
