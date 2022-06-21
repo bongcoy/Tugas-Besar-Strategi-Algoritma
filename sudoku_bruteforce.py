@@ -23,14 +23,14 @@ def sudoku_bruteforce(grid, row, col):
     for num in range(1, NMAX+1): # NMAX+1 karena exclude
        
         # Jika angka safe, maka masukkan ke dalam sel
-        if is_safe(grid, row, col, num):
+        if (is_safe(grid, row, col, num)):
            
             # Masukkan angka ke dalam sel
             grid[row][col] = num
  
             # Rekursif untuk cek kembali pada 
             # kolom selanjutnya
-            if sudoku_bruteforce(grid, row, col + 1):
+            if (sudoku_bruteforce(grid, row, col + 1)):
                 return True
  
         # Jika belum true, maka sel menjadi 0 kembali

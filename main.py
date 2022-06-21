@@ -53,16 +53,16 @@ def main():
     print_grid(use_grid)
     print()
 
-    x = [100, 500, 1000, 2000]
+    n_run = [100, 500, 1000, 2000]
 
     # Macam-macam ukuran jumlah run
-    for i in x:
+    for i in n_run:
         try_one_sudoku(use_grid, i)
 
     print("Backtrack   =",y_backtrack)
     print("Brute Force =",y_bruteforce)
 
-    draw_graph(x,y_backtrack,y_bruteforce)
+    draw_graph(n_run,y_backtrack,y_bruteforce)
 
 if __name__=="__main__":
     main()

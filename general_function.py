@@ -85,7 +85,7 @@ def used_in_box(grid, row, col, num):
 def is_safe(grid, row, col, num):
     return not used_in_row(grid, row, num) and not used_in_col(grid, col, num) and not used_in_box(grid, row, col, num)
 
-    # Print array 2D untuk membentuk sebuah Grid
+# Print array 2D untuk membentuk sebuah Grid
 def print_grid(grid):
     for row in range(len(grid)):
         if row == 0 or row == 3 or row == 6:
